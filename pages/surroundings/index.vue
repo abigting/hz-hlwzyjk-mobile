@@ -28,13 +28,13 @@
         <div>
           <img src="../../assets/imgs/location1.png" class="location-icon" alt="">
         </div>
-        <div>
+        <div style="width:100%">
           <p class="company-name">{{item.text}}</p>
           <p class="company-address">{{item.distance}}|{{item.detail}}</p>
         </div>
-        <div @click="getLocation">
+        <div class="location" @click="getLocation">
 <!--          <a href="https://uri.amap.com/marker?position=120.211816,30.20856&name=滨江区">定位到这里</a>-->
-          定位到这里
+          定位这里
         </div>
       </div>
       <div>{{location}}</div>
@@ -108,7 +108,6 @@
 
       },
       onComplete(data) {
-        console.log(data, '11111111111111111111111111111111111111111111111111')
         var str = [];
         str.push(data.position.getLat());
         str.push(data.position.getLng());
@@ -219,5 +218,12 @@
   .company-address{
     font-size: 12px;
     color:rgba(110,115,125,1);
+  }
+
+  .location{
+    font-size: 10px;
+    color: #9FA4AD;
+    text-align: right;
+    width: 50px;
   }
 </style>
