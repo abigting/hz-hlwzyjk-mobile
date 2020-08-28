@@ -74,6 +74,29 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
+  proxy: {
+    '/ohms-yhzx': {
+      target: 'http://192.168.22.158:2227', //测试
+    },
+    '/ohms-service': {
+      target: 'http://192.168.22.158:2227', //测试
+    },
+  },
   build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'less-loader',
+            options: {
+              modifyVars: {
+                '@red': '#4892FD'
+              }
+            }
+          }
+        ]
+      })
+    }
   }
 }

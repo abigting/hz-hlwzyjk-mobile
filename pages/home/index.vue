@@ -19,8 +19,7 @@
           @click="showDetail(item.link)"
           class="module-fun">
           <p class="icon">
-            <img src="../../assets/imgs/location.png" alt="">
-            <!--            <img :src="item.icon" alt="">-->
+            <img :src="item.icon" alt="">
           </p>
           <p>{{item.text}}</p>
         </div>
@@ -83,19 +82,19 @@
         menuList: [
           {
             text: '周边',
-            icon: '../../assets/imgs/location.png',
+            icon: require('../../assets/imgs/surroundings.png'),
             link:'surroundings'
           }, {
             text: '搜单位',
-            icon: '../../assets/imgs/location.png',
+            icon: require('../../assets/imgs/company.png'),
             link:'company'
           }, {
             text: '搜人员',
-            icon: '../../assets/imgs/location.png',
+            icon: require('../../assets/imgs/person.png'),
             link:'person'
           }, {
             text: '统计',
-            icon: '../../assets/imgs/location.png',
+            icon: require('../../assets/imgs/statistics.png'),
             link:'statistics'
           }
         ],
@@ -149,16 +148,16 @@
               fontWeight: 600,
             }
           },
-          toolbox: {
-            left: 'center',
-            feature: {
-              dataZoom: {
-                yAxisIndex: 'none'
-              },
-              restore: {},
-              saveAsImage: {}
-            }
-          },
+          // toolbox: {
+          //   left: 'center',
+          //   feature: {
+          //     dataZoom: {
+          //       yAxisIndex: 'none'
+          //     },
+          //     restore: {},
+          //     saveAsImage: {}
+          //   }
+          // },
           tooltip: {
             trigger: 'item'
           },
@@ -391,5 +390,6 @@
 
   .map-box {
     background: #ffffff;
+    margin-top: 10px;
   }
 </style>

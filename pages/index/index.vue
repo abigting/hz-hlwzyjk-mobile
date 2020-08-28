@@ -1,6 +1,6 @@
 <template>
   <div class="login-content">
-    <div class="title">
+    <div class="welcome">
       <p>您好，欢迎来到</p>
       <p>湖州职业健康智慧管理平台</p>
     </div>
@@ -15,6 +15,10 @@
           type="password"
           placeholder="请输入密码"
         />
+<!--        <van-field-->
+<!--          v-model="imageCode"-->
+<!--          placeholder="请输入验证码"-->
+<!--        />-->
         <div style="margin: 16px;">
           <van-button round block type="info" native-type="submit" class="submit-btn">
             登录
@@ -26,6 +30,8 @@
 </template>
 
 <script>
+  import * as userService from '../../services/user';
+  import { Toast } from 'vant';
   export default {
     name: 'index',
     data() {
@@ -35,8 +41,23 @@
       };
     },
     methods: {
-      onSubmit(values) {
-        console.log('submit', values);
+      async onSubmit() {
+        if(!this.username){
+          Toast('请填写用户名');
+          return
+        }
+        if(!this.password){
+          Toast('请填写密码');
+          return
+        }
+        if(!this.imageCode){
+          Toast('请填写验证码');
+          return
+        }
+        const res = await userService.login({username:this.username, password: this.password})
+        if(res){
+
+        }
       },
     },
   }
@@ -58,7 +79,7 @@
   .login-form{
     margin-top: 50px;
   }
-  .title{
+  .welcome{
     font-weight:600;
     font-size:22px;
     padding: 0 16px;

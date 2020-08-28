@@ -37,12 +37,17 @@
       </table>
     </div>
     <van-popup v-model="show" position="right" :style="{ height: '100vh', width:'100%' }" >
+      <van-nav-bar
+        title="查询条件"
+        left-arrow
+        @click-left="closeFilterPanel"
+      />
        <div class="filter-box">
          <p class="com-subtitle">
            统计方式
          </p>
          <div class="condition-box">
-           <span :class="conditionClass(item.value)" v-for="item in ways" :key="item.value">{{item.label}}</span>
+           <span :class="conditionClass(item.value)" v-for="item in ways" :key="item.value">{{item.label}}   <span></span></span>
          </div>
        </div>
       <div class="filter-box">
@@ -160,6 +165,9 @@
       },
       showFilterPanel(){
         this.show = true;
+      },
+      closeFilterPanel(){
+        this.show = false;
       },
       chooseData(date){
         const [start, end] = date;
