@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="com-box">
     <van-nav-bar
       title="统计"
       right-text="保存"
@@ -185,10 +185,6 @@
 </script>
 
 <style scoped lang="less">
-  .box {
-    background: #F3F5F9;
-    height: 100vh;
-  }
 
   .info {
     margin-top: 10px;
@@ -233,11 +229,6 @@
   /*common*/
   .filter-box{
     margin: 16px 12px;
-  }
-  .com-subtitle{
-    border-left: #2C7CEE 3px solid;
-    padding: 0 4px;
-    font-weight: 600;
   }
 
   .condition-box{

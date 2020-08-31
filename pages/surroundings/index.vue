@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <van-nav-bar
       title="周边"
       left-arrow
@@ -12,7 +12,7 @@
       </div>
       <div style="width:100%">
         <van-search
-          v-model="value"
+          v-model="enterprise"
           shape="round"
           placeholder="搜企业"
         />
@@ -49,6 +49,7 @@
       return {
         username: '',
         password: '',
+        enterprise:'',
         list:[
           {
             text:'某某周边企业',
@@ -169,6 +170,7 @@
     padding: 4px 0;
     >p{
       text-align: center;
+      margin: 0 ;
       >img{
         width: 18px;
       }

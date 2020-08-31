@@ -1,5 +1,5 @@
-import request from '../utils/request';
-import { OHMS } from '../constant';
+import request from '@/utils/request';
+import { OHMS } from '@/constant';
 
 export function login(data) {
   return request(`/${OHMS.YHZX}/api/user/login`, {

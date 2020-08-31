@@ -15,10 +15,10 @@
           type="password"
           placeholder="请输入密码"
         />
-<!--        <van-field-->
-<!--          v-model="imageCode"-->
-<!--          placeholder="请输入验证码"-->
-<!--        />-->
+        <van-field
+          v-model="imageCode"
+          placeholder="请输入验证码"
+        />
         <div style="margin: 16px;">
           <van-button round block type="info" native-type="submit" class="submit-btn">
             登录
@@ -38,6 +38,7 @@
       return {
         username: '',
         password: '',
+        imageCode:''
       };
     },
     methods: {
@@ -54,7 +55,7 @@
           Toast('请填写验证码');
           return
         }
-        const res = await userService.login({username:this.username, password: this.password})
+        const res = await userService.login({username:this.username, password: this.password, imageCode: this.imageCode})
         if(res){
 
         }

@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="com-box">
     <van-nav-bar
       title="统计"
       left-arrow
@@ -53,9 +53,5 @@
     background: #ffffff;
     text-align: center;
     color: #2E2F31;
-  }
-  .box{
-    background:rgba(243,245,249,1);
-    height: 100vh;
   }
 </style>

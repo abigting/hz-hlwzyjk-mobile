@@ -158,9 +158,9 @@
           //     saveAsImage: {}
           //   }
           // },
-          tooltip: {
-            trigger: 'item'
-          },
+          // tooltip: {
+          //   trigger: 'item'
+          // },
           series: [{
             type: 'pie',
             // center: ['50%', '50%'],
@@ -253,7 +253,7 @@
     background: url("../../assets/imgs/banner.png") #ffffff center;
     background-size: cover;
     color: #ffffff;
-    height: 164px;
+    height: 100px;
     padding: 64px 12px 0 12px;
   }
 
@@ -281,9 +281,9 @@
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 8px 16px 0 rgba(189, 198, 218, 0.5);
     border-radius: 8px;
-    padding: 12px 12px 14px 12px;
+    padding: 12px 24px 14px 24px;
     position: relative;
-    top: -12px;
+    top: -32px;
   }
 
   .module-fun {
@@ -297,6 +297,7 @@
 
     > p {
       text-align: center;
+      margin-bottom: 0;
     }
   }
 
