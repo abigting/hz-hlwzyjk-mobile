@@ -1,5 +1,5 @@
-import request from '@/utils/request';
-import { OHMS } from '@/constant';
+import request from '~/utils/request';
+import { OHMS } from '~/constant';
 
 export function login(data) {
   return request(`/${OHMS.YHZX}/api/user/login`, {
@@ -12,5 +12,11 @@ export function logout(data) {
   return request(`/${OHMS.YHZX}/api/user/logout`, {
     method: 'post',
     data
+  });
+}
+
+export function createCode() {
+  return request(`/${OHMS.YHZX}/api/common/createImageCode`, {
+    method: 'post',
   });
 }

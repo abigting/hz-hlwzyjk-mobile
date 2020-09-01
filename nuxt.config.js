@@ -63,7 +63,8 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
@@ -76,11 +77,8 @@ export default {
   */
   proxy: {
     '/ohms-yhzx': {
-      target: 'http://192.168.22.158:2227', //测试
-    },
-    '/ohms-service': {
-      target: 'http://192.168.22.158:2227', //测试
-    },
+      target: 'http://192.168.22.158:2227',
+    }
   },
   build: {
     extend(config, ctx) {
@@ -98,5 +96,6 @@ export default {
         ]
       })
     }
-  }
+  },
+  loading: '@/components/loading/index.vue'
 }

@@ -27,6 +27,7 @@
     name: 'name',
     data() {
       return {
+        value:'',
         list:[
           {
             id:1,

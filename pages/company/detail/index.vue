@@ -63,6 +63,7 @@
     data () {
       return {
         active: 0,
+        value:'',
         tabList: [
           {
             id: 0,

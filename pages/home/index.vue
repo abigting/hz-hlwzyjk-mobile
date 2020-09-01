@@ -6,8 +6,8 @@
           <img src="../../assets/imgs/profile.png" alt="">
         </div>
         <div>
-          <p>Hi,吴小莉</p>
-          <p class="address">吴兴区</p>
+          <p style="margin-bottom: 4px">Hi,{{userInfo.userName}}</p>
+          <p class="address">{{userInfo.zone}}</p>
         </div>
       </div>
     </div>
@@ -74,6 +74,7 @@
 
 <script>
   import echarts from 'echarts'
+  import { getUserInfo } from '~/utils/common'
 
   export default {
     name: 'index',
@@ -83,21 +84,22 @@
           {
             text: '周边',
             icon: require('../../assets/imgs/surroundings.png'),
-            link:'surroundings'
+            link: 'surroundings'
           }, {
             text: '搜单位',
             icon: require('../../assets/imgs/company.png'),
-            link:'company'
+            link: 'company'
           }, {
             text: '搜人员',
             icon: require('../../assets/imgs/person.png'),
-            link:'person'
+            link: 'person'
           }, {
             text: '统计',
             icon: require('../../assets/imgs/statistics.png'),
-            link:'statistics'
+            link: 'statistics'
           }
         ],
+        userInfo: getUserInfo() || {},
         charts: '',
         opinion: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
         opinionData: [
@@ -227,17 +229,17 @@
           type: 'highlight',
           seriesIndex: 0,
           dataIndex: 0
-        });
+        })
         this.charts.dispatchAction({
           type: 'showTip',
           seriesIndex: 0,
           dataIndex: 0
-        });
+        })
       },
       jump () {
         this.$router.push(`/home/userInfo`)
       },
-      showDetail(link){
+      showDetail (link) {
         this.$router.push(`/${link}`)
       }
     },
@@ -253,7 +255,7 @@
     background: url("../../assets/imgs/banner.png") #ffffff center;
     background-size: cover;
     color: #ffffff;
-    height: 100px;
+    height: 164px;
     padding: 64px 12px 0 12px;
   }
 

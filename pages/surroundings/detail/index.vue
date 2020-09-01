@@ -7,12 +7,12 @@
     />
     <div class="detail-box">
       <div class="info">
-        <p>姓名1</p>
-        <p>男 43岁 某某单位</p>
-        <p>危害因素：苯、二甲苯、噪声、苯、二甲苯、噪声苯、二甲苯、噪声。</p>
+        <p>某某企业企业</p>
+        <p>吴兴区金盖山路56号希尔顿大酒店…</p>
+        <p>法人：张三</p>
+        <p>电话：176536348907</p>
       </div>
       <div class="history">
-        <p class="subtitle">历史记录</p>
         <van-tabs v-model="active" @change="changeTab">
           <van-tab v-for="item in tabList" :title="item.text" :key="item.id">
             <div class="health-check" v-if="active===0">
@@ -60,15 +60,11 @@
         tabList: [
           {
             id: 0,
-            text: '体检'
+            text: '2020年'
           },
           {
             id: 1,
-            text: '诊断'
-          },
-          {
-            id: 2,
-            text: '鉴定'
+            text: '2019年'
           }
         ],
         list: [
